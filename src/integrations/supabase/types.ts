@@ -14,7 +14,66 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      quote_enquiries: {
+        Row: {
+          business_name: string
+          business_type: string
+          consent: boolean
+          country: string
+          created_at: string
+          current_website_url: string | null
+          email: string
+          estimated_budget: string
+          full_name: string
+          has_website: boolean
+          id: string
+          main_goal: string
+          page_count: string
+          phone: string
+          project_details: string
+          project_needs: string[]
+          updated_at: string
+        }
+        Insert: {
+          business_name: string
+          business_type: string
+          consent: boolean
+          country: string
+          created_at?: string
+          current_website_url?: string | null
+          email: string
+          estimated_budget: string
+          full_name: string
+          has_website: boolean
+          id?: string
+          main_goal: string
+          page_count: string
+          phone: string
+          project_details: string
+          project_needs: string[]
+          updated_at?: string
+        }
+        Update: {
+          business_name?: string
+          business_type?: string
+          consent?: boolean
+          country?: string
+          created_at?: string
+          current_website_url?: string | null
+          email?: string
+          estimated_budget?: string
+          full_name?: string
+          has_website?: boolean
+          id?: string
+          main_goal?: string
+          page_count?: string
+          phone?: string
+          project_details?: string
+          project_needs?: string[]
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
