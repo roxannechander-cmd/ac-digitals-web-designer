@@ -16,7 +16,7 @@ const quoteSchema = z.object({
   estimatedBudget: z.string().trim().min(1).max(60),
   projectDetails: z.string().trim().min(20).max(3000),
   mainGoal: z.string().trim().min(2).max(100),
-  consent: z.literal(true),
+  consent: z.boolean().refine((value) => value, "Consent is required"),
 });
 
 export type QuoteInput = z.input<typeof quoteSchema>;
